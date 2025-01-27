@@ -99,13 +99,12 @@ function preventImgDownload(event) {
 }
 
 function zoomBigImg(e) {
-  if (e.target.nodeName === "UL") {
-    return;
-  }
-  const imgSrc = e.target.getAttribute("data-source");
-  const imgAlt = e.target.getAttribute("alt");
-  const instance = basicLightbox.create(`
+  if (e.target.nodeName === "IMG") {
+    const imgSrc = e.target.getAttribute("data-source");
+    const imgAlt = e.target.getAttribute("alt");
+    const instance = basicLightbox.create(`
       <img src="${imgSrc}" width="1112" height="640" alt="${imgAlt}">
   `);
-  instance.show();
+    instance.show();
+  }
 }
