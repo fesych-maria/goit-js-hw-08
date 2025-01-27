@@ -70,12 +70,12 @@ const refs = {
 
 function imageTemplate(img) {
   return `<li class="gallery-item">
-  <a class="gallery-link" href=${img.original}>
+  <a class="gallery-link" href="${img.original}">
     <img
       class="gallery-image"
-      src=${img.preview}
-      data-source=${img.original}
-      alt=${img.description}
+      src="${img.preview}"
+      data-source="${img.original}"
+      alt="${img.description}"
     />
   </a>
 </li>
@@ -105,7 +105,7 @@ function zoomBigImg(e) {
   const imgSrc = e.target.getAttribute("data-source");
   const imgAlt = e.target.getAttribute("alt");
   const instance = basicLightbox.create(`
-    <img src=${imgSrc} width="1112" height="640" alt=${imgAlt}>
-`);
+      <img src="${imgSrc}" width="1112" height="640" alt="${imgAlt}">
+  `);
   instance.show();
 }
